@@ -33,7 +33,7 @@ def season(url):
     request = requests.get(url, headers=headers)
     soup = BeautifulSoup(request.text, "html.parser")
     amount_season = 0
-    seasons = soup.find_all("div", class_="the_invis")
+    seasons = soup.find_all("h2", class_="b-b-title the-anime-season center")
     for _ in seasons:
         amount_season += 1
     return amount_season
